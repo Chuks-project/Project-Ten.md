@@ -11,21 +11,21 @@
 
 ### Update the instance and Install Nginx
 
-``
-sudo apt update
-sudo apt install nginx
-
-``
+```
+    sudo apt update
+    sudo apt install nginx
+```
 
 - Configure Nginx LB using Web Servers’ names defined in /etc/hosts
 
-      `sudo vi /etc/hosts`
+`sudo vi /etc/hosts`
       
    
  - Open the default nginx configuration file
       
-`      
-        #insert following configuration into http section upstream myproject {
+ ```     
+        #insert following configuration into http section upstream myproject 
+                       {
                         server Web1 weight=5;
                        server Web2 weight=5;
                        }     
@@ -39,8 +39,8 @@ sudo apt install nginx
 
         #comment out this line
             #       include /etc/nginx/sites-enabled/*;
+```
 
-`
 
 - Restart Nginx and make sure the service is up and running
 
